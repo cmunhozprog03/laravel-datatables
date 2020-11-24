@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataTables\EmployeeDataTable;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -11,9 +12,9 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(EmployeeDataTable $datatable)
     {
-        //
+        return $datatable->render('employee');
     }
 
     /**
